@@ -4,7 +4,7 @@ import 'reinvented-color-wheel/css/reinvented-color-wheel.min.css'
 import styles from "./index.module.css"
 /* https://www.npmjs.com/package/reinvented-color-wheel */
 const Wheel = () => {
-  const [hex, setHex] = React.useState('#000000')
+  const [hex, setHex] = React.useState('#7677ff')
   return (
     <>
     <h1>How do you <em>feel?</em> </h1>
@@ -21,10 +21,10 @@ const Wheel = () => {
         wheelReflectsSaturation
         onChange={({ hex }) => setHex(hex)}
       />
-      <input disabled={true} className={styles.colourBox} style={{backgroundColor: hex, border: "1px solid" + hex, boxShadow: "0px 0px 2px 2px"+hex}}value={hex} onChange={e => setHex(e.target.value)} />
+      <input disabled={true} className={styles.colourBox} style={{backgroundColor: hex, border: "1px solid" + hex, boxShadow: "0px 1px 4px 2px"+hex, color : hex[1] <= 4 ? "white" : "black"}}value={hex} onChange={e => setHex(e.target.value)} />
 
         <div className={styles.buttonBox}>
-      <button className={styles.colourBox} style={{backgroundColor: hex}}>start</button>
+      <button className={styles.colourBox} id={styles.startButton} style={{backgroundColor: hex,color : hex[1] <= 4 ? "white" : "black"}} onClick={()=>console.log(hex[1])}>start</button>
       </div>
     </>
   )

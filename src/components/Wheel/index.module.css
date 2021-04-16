@@ -8,6 +8,18 @@
     color: black;
 }
 
-button{
-min-width: 10vw;
+.buttonBox{
+    position: relative;
+    min-height: fit-content; 
+}
+
+#startButton{
+    position: absolute;
+    right: 100px;
+    top: 70px;
+    min-width: 10vw;
+    padding: 15px 20px;
+    font-weight: bolder;
+    border: 1px solid  rgba(118, 173, 255, 0.808);
+    box-shadow: 0px 0px 10px 1px  rgb(118, 173, 255);
 }
